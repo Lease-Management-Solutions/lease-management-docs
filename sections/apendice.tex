@@ -1,0 +1,89 @@
+% --- Document: Preamble ---
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../assets/}}}
+% --- Document: Start ---
+\begin{document}
+% Closing Remarks
+\section{APÊNDICE}
+\subsection{Manual de Utilização do Sistema}
+
+% Login
+\subsubsection{Login}
+Ao acessar o sistema, o usuário deverá informar seu e-mail e senha para autenticação. Uma
+vez autenticado, o usuário terá acesso ao sistema, e será armezenado um token de sessão,
+que será utilizado para manter o usuário autenticado. Quando o usuário sair do sistema, o
+token de sessão será invalidado. O login será assegurado por meio de criptografia de senha.
+% Login Screen
+\subsubsection{Tela de Login}
+Na tela inicial de login, tem um campo para o usuário informar seu e-mail, e um campo para 
+o usuário informar sua senha, um botão para o servirá para o usuário clicar e acessar o 
+sistema. Um link com a descrição \textit{"Não tem conta? Cadastre-se"}, abaixo do botão 
+de login será para o usuário clicar e ser redirecionado para a tela de cadastro. A caixa 
+de seleção \textit{"Ocultar/Exibir Senha"} será para o usuário marcar ou desmarcar, 
+conforme desejar, para ocultar ou exibir a senha digitada. E por ultimo, um link com a
+descrição \textit{"Esqueceu a senha?"}, que será para o usuário clicar e ser redirecionado
+para a tela de recuperação de senha, que utilizará condigo de recuperação de 5 digitos.
+% New User
+\subsubsection{Novo Usuário}
+Para se cadastrar no sistema, o usuário deverá informar seu nome, data de nascimento, 
+cidade de moradia, gênero sexual, estado civil, e-mail, senha e confirmar a senha. 
+O e-mail deverá ser único, e o sistema deverá verificar se o e-mail informado é válido. 
+O usuário deverá confirmar a senha digitada, e o sistema deverá verificar se as senhas
+digitadas são iguais. O usuário deverá aceitar os termos de uso do sistema para se 
+cadastrar. Uma vez cadastrado, o usuário poderá acessar o sistema.
+% Main Feed
+\subsubsection{Feed Principal}
+O feed principal será a tela inicial do usuário autenticado, onde ele poderá visualizar
+os posts de outros usuários, e poderá postar suas próprias publicações. O feed principal
+será atualizado automaticamente a cada nova publicação de outros usuários ou dele próprio. 
+O usuário poderá curtir, comentar e compartilhar as publicações de outros usuários. Na 
+parte superior do feed principal, haverá um campo de pesquisa, onde o usuário poderá
+pesquisar por outros usuários, ou por publicações específicas. O feed principal será
+dividido em páginas, e o usuário poderá navegar entre as páginas para visualizar publicações
+mais antigas. Abaixo do campo de pesquisar, será o campo para o usuário postar suas
+próprias publicações. O usuário poderá postar textos, imagens, vídeos e links. O usuário
+poderá marcar outros usuários em suas publicações, e poderá adicionar hashtags. O usuário
+poderá escolher se sua publicação será pública, ou se será visível apenas para seus amigos.
+% Sidebar
+\subsubsection{Menu Lateral}
+O menu lateral será um menu que ficará na lateral esquerda da tela, e será acessível em
+qualquer tela do sistema. O menu lateral deverá conter atalhos para as principais 
+funcionalidades, como o feed principal, o perfil do usuário, a lista de amigos, as
+configurações do sistema, e a opção de sair do sistema. O menu lateral deverá conter
+também a foto do usuário, seu nome, e seu nível de amizade com o usuário autenticado.
+% Publication on the Feed
+\subsubsection{Publicação no Feed}
+Visualmente todas as publicações serão exibidas de forma semelhante, com o mesmo 
+tamanho visual, com um cabeçalho contendo a foto do usuário que fez a publicação,
+seu nome, a data e hora da publicação, e um menu de opções. O menu de opções
+deverá conter as opções de curtir, comentar, compartilhar, e denunciar a publicação. 
+A publicação será composta de texto, imagens, vídeos, links, hashtags, e marcações de
+usuários. Se houver muito texto, deverá ser exibido um botão de "Leia Mais", que
+ao ser clicado, exibirá o texto completo. Se houver muitas imagens, deverá ser exibido
+um botão de "Ver Mais", que ao ser clicado, exibirá as imagens restantes. Se houver
+muitos comentários, deverá ser exibido um botão de "Ver Mais", que ao ser clicado,
+exibirá os comentários restantes.
+% User Feed
+\subsubsection{Feed do usuário}
+O feed do usuário será uma tela onde o usuário poderá visualizar suas próprias publicações,
+ou as publicações de outros usuários que ele tenha acessado. O feed do usuário deverá 
+apresentar a classificação pessoal dos usuários, que será baseada nas notas que os usuários
+deram para suas publicações, conforme as interações que tiveram com elas e com os imóveis, 
+para que seja categorizado com um bom locador, ou um bom locatário, etc.
+% Publications
+\subsubsection{Publicações}
+A publicações terão suas próprias classificações, uma vez que o intuito do sistema é
+fazer com que os usuários interajam com as publicações, e com os imóveis. Os imóveis
+publicados, poderão ter as classificações de "Bom", "Ruim", "Regular", "Ótimo", "Péssimo".
+As publicações serão categorizadas em "Venda" ou "Aluguel" (quando o usuário esta 
+vendendo ou alugando o seu imóvel), "Compro" ou "Alugo" (quando o usuário procura um 
+imóvel para comprar ou alugar).
+% Publication Detail
+\subsubsection{Detalhamento das Publicações}
+Além das classificação, do autor do post, e todos os metadados envolvidos com a elaboração 
+do post, o post deverá conter uma padronização de informações, como: "Título", "Descrição",
+"Localização", "Preço", "Área", "Quartos", "Banheiros", "Vagas de Garagem", "Mobiliado", 
+etc..., seguindo todas as regras de negocios e detalhamento do imóvel.
+% --- Document: End ---
+\end{document}
+

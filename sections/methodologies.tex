@@ -1,0 +1,66 @@
+% --- Document: Preamble ---
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../assets/}}}
+% --- Document: Start ---
+\begin{document}
+% methodologies
+\section{Metodologia}
+Esta seção abordará as ferramentas e os métodos, assim como o contexto no qual elas 
+serão utilizadas e sua finalidade no projeto.
+% Camadas do Sistema
+\subsection{Camadas do Sistema}
+
+O sistema desenvolvido é estruturado um repositorio central, com 2 subrepositorios separando backend de front, com objetivo de permitir mutiplos acesso ao mesmo tempo.
+
+\subsubsection{Back End}
+O back-end é a camada responsável por processar as requisições dos clientes, realizar a lógica de negócio e acessar o banco de dados. Para o desenvolvimento do back-end, utilizamos as seguintes tecnologias:
+\begin{itemize}
+    \item \textbf{NodeJS}: Linguagem de backend
+    \item \textbf{MigLayout}: Biblioteca de layout flexível e responsiva. 
+    \item \textbf{Formdev Flatlaf}: Look and Feel para a biblioteca Swing.
+    \item \textbf{Formdev IntelliJThemes}: Conjunto de temas inspirados no IntelliJ para a biblioteca Swing.
+\end{itemize}
+A camada visual captura as ações do usuário e as envia para a camada funcional para processamento.
+
+\subsubsection{Front End}
+O front-end é a camada responsável por apresentar as informações ao usuário e capturar as ações realizadas por ele. Para o desenvolvimento do front-end, utilizamos as seguintes tecnologias:
+\begin{itemize}
+    \item \textbf{ReactJS}: Biblioteca de desenvolvimento de interfaces de usuário.
+    \item \textbf{Maven JavaDoc Plugin}: Plugin Maven para a criação de documentação JavaDoc.
+    \item \textbf{BouncyCastle BCProvider}: Biblioteca de criptografia.
+\end{itemize}
+A camada funcional é essencial para garantir que o sistema opere de acordo com as especificações e requisitos definidos.
+
+\subsubsection{Banco de Dados}
+A camada de armazenamento é responsável pela gestão e persistência dos dados utilizados pelo sistema.
+
+% Compenentes do Sistema
+\subsection{Componentes do Sistema}
+
+Nesta seção, apresentamos os componentes do sistema, que são divididos em diversas áreas funcionais para facilitar o desenvolvimento e manutenção. Cada componente é detalhado a seguir:
+
+\begin{itemize}
+    \item \textbf{Estilo: Componentes Básicos (Painéis, Modais e Notificações)}: Desenvolver os componentes básicos de interface, incluindo painéis, modais e notificações.
+    \item \textbf{Estilo: Cores e Fontes}: Definir e aplicar a paleta de cores e fontes que serão utilizadas na interface do usuário.
+    \item \textbf{Painel: Tela Inicial}: Criar o painel da tela inicial, onde os usuários poderão acessar as principais funcionalidades do sistema.
+    \item \textbf{Painel: Criação de Conta - Dados Obrigatórios Básicos}: Implementar a funcionalidade de criação de conta com os dados obrigatórios básicos.
+    \item \textbf{Painel: Criação de Conta - Dados Opcionais Extras}: Adicionar campos opcionais extras no processo de criação de conta.
+    \item \textbf{Painel: Criação de Conta - Foto de Perfil e Preferências}: Permitir que os usuários adicionem uma foto de perfil e configurem suas preferências durante a criação da conta.
+    \item \textbf{Recuperação de Conta: Geração de Código}: Implementar a funcionalidade de recuperação de conta através da geração de um código.
+    \item \textbf{Recuperação de Conta: Recuperação de Conta}: Desenvolver o processo de recuperação de conta utilizando o código gerado.
+    \item \textbf{Painel de Navegação}: Criar o painel de navegação que permitirá aos usuários acessar diferentes seções do sistema.
+    \item \textbf{Feed de Usuário}: Implementar o feed onde os usuários podem ver atualizações e postagens de outros usuários.
+    \item \textbf{Propriedades: Criação}: Desenvolver a funcionalidade de criação de propriedades, onde os usuários podem adicionar novas propriedades ao sistema.
+    \item \textbf{Propriedades: Edição e Remoção}: Permitir a edição e remoção de propriedades existentes.
+    \item \textbf{Postagens: Criação}: Implementar a funcionalidade de criação de postagens pelos usuários.
+    \item \textbf{Postagens: Edição e Remoção}: Permitir a edição e remoção de postagens existentes.
+    \item \textbf{Postagens: Comentários}: Desenvolver a funcionalidade de comentários em postagens.
+    \item \textbf{Perfil: Perfil de Usuário}: Criar a página de perfil do usuário onde informações pessoais e preferências podem ser visualizadas e editadas.
+    \item \textbf{Perfil: Preferências de Usuário}: Implementar a funcionalidade de configuração de preferências do usuário.
+    \item \textbf{Chat}: Desenvolver a funcionalidade de chat para comunicação entre usuários.
+    \item \textbf{Configuração: Escala e Anti-Aliasing}: Implementar configurações de escala e anti-aliasing para melhorar a qualidade visual do sistema.
+\end{itemize}
+
+% --- Document: End ---
+\end{document}
+

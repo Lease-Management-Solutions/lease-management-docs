@@ -1,0 +1,127 @@
+% !TEX TS-program = lualatex
+% !TEX encoding = UTF-8 Unicode
+% --- Document: Preamble ---
+% Formatting
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=3cm,top=2cm,bottom=2cm,right=2cm]{geometry}
+
+\usepackage{minted}
+
+% Subfiles Support
+\usepackage{subfiles}
+
+% Graphics Support
+\usepackage{graphicx}
+\graphicspath{{./assets/}} 
+
+% Font and Language
+
+\usepackage{mathptmx}
+
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+
+% Margins, Columns, Indentation & Spacing
+\usepackage{indentfirst}
+\setlength{\parindent}{1.25cm}
+\usepackage{ragged2e}  % For extendability
+\usepackage{setspace}
+\onehalfspacing
+
+% Headers, Titles, Footnotes & Captioning
+\usepackage{sectsty}
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+\usepackage{footmisc}
+\usepackage{caption}
+\captionsetup[figure]{
+    font=normalsize, % Define o tamanho da fonte como 11pt (normalsize equivale a 11pt no seu documento)
+    labelfont=bf     % Opcional: deixa o rótulo (ex.: "Figura 1") em negrito
+}
+
+% Pagestyle
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Limpa cabeçalhos e rodapés
+\fancyhead[R]{\thepage} % Número da página no canto superior direito
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal do cabeçalho
+\setlength{\headheight}{15pt} % Ajusta a altura do cabeçalho para evitar problemas de sobreposição
+
+% Document Info
+\title{{\Huge Lease Management Solutions}}
+\author{
+}
+\date{2025}
+
+% --- Document: Start ---
+\begin{document}
+    % Title Page
+    \begin{center}
+      % Title
+      {\bfseries\Huge LEASE MANAGEMENT SOLUTIONS}\\ % Título em caixa alta, Times 14, negrito
+      \vspace{1cm} % 1 linha em branco
+    \end{center}
+    % Authors
+    \begin{flushright}
+        \textbf{Nome do(s) Autor(es)}\\ % Texto em negrito
+        MARCOS RODRIGO BALBINO DINIZ\\ % Nome do autor, sem negrito
+        WILLIANS HENRIQUE SANTOS SILVA\\ % Nome do autor, sem negrito
+        \vspace{0.5cm} % Pequeno espaço entre autores e orientador
+        \textbf{ORIENTADOR:}\\ % Texto em negrito
+        NORIO ISHISAKI % Nome do orientador, sem negrito
+    \end{flushright}
+    \vspace{1cm} % 1 linha em branco
+
+
+   % Resumo
+    \section*{\textbf{Resumo}} % Título alinhado à esquerda, em negrito, Times New Roman 11
+    \noindent % Remove o adentramento do parágrafo
+    O presente trabalho técnico apresenta o desenvolvimento de um sistema de gestão de contratos imobiliários, com o objetivo de automatizar atividades operacionais e otimizar custos. O sistema proposto permite o controle eficiente de contratos de locação, abrangendo diferentes status, como ativos, encerrados, em acordo extrajudicial e em cobrança judicial. Além disso, auxilia corretores e o setor financeiro em tarefas cruciais, como envio de notificações dentro dos prazos legais, reajuste de aluguéis, cálculo de valores devidos e repasse de receitas. O sistema também oferece controle detalhado do fluxo de caixa, gerando termos e formulários necessários, garantindo conformidade com a legislação vigente e facilitando a execução de atividades operacionais. Com isso, busca-se liberar os corretores e imobiliárias para se concentrarem em atividades estratégicas e geradoras de receita, enquanto o sistema assume a administração minuciosa dos dados e o cumprimento das obrigações legais.
+
+    \vspace{0.5cm} % Espaço entre o texto e as palavras-chave
+    \noindent \textbf{Palavras-chave:} gestão de contratos, automação, imobiliária, fluxo de caixa, otimização de custos.
+
+    \vspace{1cm} % Espaço entre o resumo e o abstract
+
+    % Abstract
+    \section*{\textbf{\textit{Abstract}}} % Título alinhado à esquerda, em negrito e itálico, Times New Roman 11
+        \noindent % Remove o adentramento do parágrafo
+        \textit{This technical work presents the development of a real estate contract management system aimed at automating operational activities and optimizing costs. The proposed system enables efficient management of rental contracts, covering different statuses such as active, closed, extrajudicial agreement, and judicial collection. Additionally, it assists realtors and the financial sector in crucial tasks, such as sending notifications within legal deadlines, adjusting rents, calculating amounts due, and distributing revenues. The system also provides detailed cash flow control, generating necessary terms and forms, ensuring compliance with current legislation, and facilitating the execution of operational activities. Thus, the goal is to allow realtors and real estate agencies to focus on strategic and revenue-generating activities, while the system takes responsibility for the meticulous administration of data and compliance with legal obligations.}
+
+        \vspace{0.5cm} % Espaço entre o texto e as keywords
+        \noindent \textit{\textbf{Keywords:}} \textit{contract management, automation, real estate, cash flow, cost optimization.}
+
+    \section*{Introdução}
+
+    O presente trabalho técnico tem como objetivo o desenvolvimento de um sistema de gestão de contratos imobiliários, com foco na automação de atividades operacionais e na otimização de custos. O projeto visa atender às necessidades de corretores e imobiliárias, oferecendo uma solução tecnológica que permita o controle eficiente de contratos de locação e seus respectivos status, como ativos, encerrados, em acordo extrajudicial ou em cobrança judicial.
+
+    A gestão de contratos é um processo complexo que envolve diversas etapas e responsabilidades. Contratos ativos, por exemplo, geram receitas regularmente, enquanto contratos encerrados demandam a quitação de obrigações. Já os contratos em acordo extrajudicial representam situações em que há dívidas pendentes, mas com condições de pagamento acordadas entre as partes. Por outro lado, contratos em cobrança judicial indicam a necessidade de ações legais para resolver pendências financeiras, não gerando mais receitas diretas. O sistema proposto será capaz de gerenciar esses diferentes cenários, garantindo maior controle e eficiência.
+
+    Além disso, o sistema auxiliará os corretores e o setor financeiro em atividades cruciais, como o envio de notificações dentro dos prazos legais, o reajuste de aluguéis nas datas corretas e o cálculo preciso de valores devidos, incluindo despesas anexas aos contratos. Também será possível realizar o repasse de valores recebidos de forma correta, respeitando as preferências de pagamento dos proprietários, que podem ter múltiplas contas bancárias ou métodos de recebimento associados a diferentes imóveis e períodos.
+
+    Outro diferencial do sistema é o controle detalhado do fluxo de caixa, permitindo o acompanhamento de cada movimentação financeira, seja por tipo de conta bancária ou método de pagamento. Além disso, o sistema gerará termos e formulários necessários para os corretores, garantindo conformidade com a legislação vigente e facilitando a execução de atividades operacionais que antes eram realizadas manualmente.
+
+    Com essa abordagem, o projeto busca liberar os corretores e as imobiliárias para se concentrarem em atividades estratégicas e geradoras de receita, enquanto o sistema assume a responsabilidade pela administração minuciosa dos dados e pelo cumprimento das obrigações legais. Dessa forma, o sistema proposto não apenas otimiza processos, mas também contribui para a melhoria da gestão e da tomada de decisões no setor imobiliário.
+
+    % 1 - Introduction
+    \subfile{sections/theoreticalFramework}
+   
+    % 2 - Project Methodologies
+    \subfile{sections/methodologies}
+    
+    % 3 Expected Results
+    \subfile{sections/expectedResults}
+    
+    % 4 - Timeline
+    \subfile{sections/timeline}
+
+    %anexos
+    \subfile{sections/anexos} 
+    % apendice
+
+    \subfile{sections/apendice}
+    % --- Document: End ---
+\end{document}
+

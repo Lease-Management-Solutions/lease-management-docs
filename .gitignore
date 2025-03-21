@@ -1,0 +1,9 @@
+# Ignore arquivos auxiliares do LaTeX
+*.aux
+*.log
+
+# Ignore arquivos PDF gerados
+*.pdf
+
+# Ignore arquivos compactados
+*.gz
