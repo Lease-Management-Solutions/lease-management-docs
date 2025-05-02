@@ -10,31 +10,80 @@ serão utilizadas e sua finalidade no projeto.
 % Camadas do Sistema
 \subsection{Camadas do Sistema}
 
-O sistema desenvolvido é estruturado um repositorio central, com 2 subrepositorios separando backend de front, com objetivo de permitir mutiplos acesso ao mesmo tempo.
+O sistema desenvolvido é estruturado a partir de um repositório central, que contém a configuração dos módulos 
+e do banco de dados, além de dois sub-repositórios separados, destinados ao backend e ao frontend. Essa 
+separação tem como objetivo permitir múltiplos acessos simultâneos e facilitar a manutenção e a escalabilidade 
+do sistema.
+
+Todo o ambiente será projetado para funcionar em containers Docker, organizados em uma sub-rede interna, 
+o que simplifica a comunicação entre serviços e contribui para a segurança dos dados. O uso de containers 
+também está alinhado com o plano de recuperação de desastres e de backup, além de tornar a instalação e a 
+inicialização do sistema mais acessíveis a usuários com conhecimentos básicos de informática.
+
+Segundo Turnbull (2014), o Docker permite empacotar aplicações e suas dependências em containers portáteis e 
+isolados, garantindo que o sistema funcione de forma consistente em diferentes ambientes. A separação entre 
+backend e frontend, por sua vez, segue boas práticas de arquitetura de software, promovendo a divisão de 
+responsabilidades, o que facilita a manutenção, o desenvolvimento paralelo e a escalabilidade do projeto (FOWLER, 2002).
 
 \subsubsection{Back End}
-O back-end é a camada responsável por processar as requisições dos clientes, realizar a lógica de negócio e acessar o banco de dados. Para o desenvolvimento do back-end, utilizamos as seguintes tecnologias:
+O back-end é a camada do sistema responsável por processar as requisições dos clientes, aplicar a lógica de 
+negócio, realizar a comunicação com o banco de dados e fornecer respostas apropriadas para o front-end. Sua 
+função é essencial para garantir a segurança, a integridade dos dados e o correto funcionamento das regras da 
+aplicação (FOWLER, 2002).
+
+A arquitetura do sistema segue o padrão Model-View-Controller (MVC), que organiza o código em camadas específicas 
+de responsabilidade: o Model lida com os dados e regras de negócio, o View representa as interfaces de apresentação 
+(neste caso, consumidas pela API), e o Controller gerencia as interações entre o usuário e o sistema (GAMMA et al., 1995). 
+A adoção desse padrão melhora a manutenção, a escalabilidade e a reutilização do código.
+
+Além disso, o sistema é estruturado para fornecer uma API RESTful, seguindo os princípios de Representational State 
+Transfer (REST). As APIs REST são amplamente adotadas por sua simplicidade, padronização e escalabilidade, permitindo 
+que diferentes sistemas se comuniquem de forma eficiente através de requisições HTTP (FIELDING, 2000).
+
 \begin{itemize}
-    \item \textbf{NodeJS}: Linguagem de backend
-    \item \textbf{MigLayout}: Biblioteca de layout flexível e responsiva. 
-    \item \textbf{Formdev Flatlaf}: Look and Feel para a biblioteca Swing.
-    \item \textbf{Formdev IntelliJThemes}: Conjunto de temas inspirados no IntelliJ para a biblioteca Swing.
+    \item \textbf{Node.js}: Plataforma baseada no motor V8 do Google Chrome, que permite o desenvolvimento de aplicações 
+        escaláveis e eficientes usando JavaScript no servidor (TILKOV; VOGELS, 2010).
+    \item \textbf{TypeScript}: Linguagem de programação desenvolvida pela Microsoft, que adiciona tipagem estática e 
+        recursos avançados ao JavaScript (MICROSOFT, 2012).
+    \item \textbf{Express}: Framework minimalista para Node.js, que facilita a criação de aplicações web e APIs RESTful 
+        (HOLMES, 2016).
+    \item \textbf{Mongoose}: Biblioteca para modelagem de dados no MongoDB com base em esquemas, para Node.js 
+        (KARGER, 2013).
+    \item \textbf{bcrypt}: Biblioteca de hashing para senhas no Node.js, baseada no algoritmo bcrypt (NPM, 2011).
+    \item \textbf{dotenv}: Módulo para carregar variáveis de ambiente a partir de arquivos `.env`, usado para 
+        configurar ambientes de desenvolvimento (NPM, 2011).
+    \item \textbf{jsonwebtoken}: Biblioteca para criação e verificação de tokens JWT em aplicações Node.js, 
+        usada para autenticação segura (NPM, 2011).
 \end{itemize}
-A camada visual captura as ações do usuário e as envia para a camada funcional para processamento.
+
 
 \subsubsection{Front End}
-O front-end é a camada responsável por apresentar as informações ao usuário e capturar as ações realizadas por ele. Para o desenvolvimento do front-end, utilizamos as seguintes tecnologias:
+O front-end é a camada responsável por apresentar as informações ao usuário e capturar as ações realizadas 
+por ele. Para o desenvolvimento do front-end, utilizamos as seguintes tecnologias:
 \begin{itemize}
     \item \textbf{ReactJS}: Biblioteca de desenvolvimento de interfaces de usuário.
-    \item \textbf{Maven JavaDoc Plugin}: Plugin Maven para a criação de documentação JavaDoc.
-    \item \textbf{BouncyCastle BCProvider}: Biblioteca de criptografia.
+    \item \textbf{NextSJ}: Framework para React que permite a criação de aplicações web com renderização do lado do servidor, 
+        facilitando o desenvolvimento de aplicações escaláveis e otimizadas (VERCEL, 2016).
+    \item \textbf{Tailwind CSS}: Framework de utilitários para construção rápida de interfaces customizáveis e 
+    responsivas (TAILWIND LABS, 2017).
+    \item \textbf{TypeScript}: Uma linguagem de programação desenvolvida pela Microsoft, que é um superconjunto do 
+        JavaScript, adicionando tipagem estática e recursos avançados (MICROSOFT, 2012).
 \end{itemize}
-A camada funcional é essencial para garantir que o sistema opere de acordo com as especificações e requisitos definidos.
 
-\subsubsection{Banco de Dados}
-A camada de armazenamento é responsável pela gestão e persistência dos dados utilizados pelo sistema.
+\subsubsection{Banco de Dados} A camada de armazenamento é responsável pela gestão e persistência dos dados 
+utilizados pelo sistema. Para este projeto, foi escolhido o banco de dados NoSQL MongoDB Community Edition, 
+disponível gratuitamente para operações locais, pois atende às necessidades levantadas quanto à estrutura de 
+dados e ao plano de disponibilidade e backup.
 
-% Compenentes do Sistema
+Segundo Date (2004), um banco de dados é uma coleção organizada de dados que visa atender múltiplas necessidades 
+de forma eficiente, segura e com fácil acesso às informações. No contexto deste sistema, o uso de um banco NoSQL 
+se mostra mais adequado devido à natureza dinâmica dos dados.
+
+Diferente dos bancos relacionais tradicionais, bancos de dados NoSQL, como o MongoDB, oferecem maior 
+flexibilidade ao lidar com estruturas variáveis de documentos (HELMAN, 2015). Essa característica é especialmente 
+vantajosa no sistema proposto, pois cada contrato poderá ter múltiplos dados anexos e informações adicionais sem a 
+obrigatoriedade de seguir um padrão rígido, o que facilita a adaptação e a escalabilidade do armazenamento.
+% Componentes do Sistema
 \subsection{Componentes do Sistema}
 
 Nesta seção, apresentamos os componentes do sistema, que são divididos em diversas áreas funcionais para facilitar o desenvolvimento e manutenção. Cada componente é detalhado a seguir:

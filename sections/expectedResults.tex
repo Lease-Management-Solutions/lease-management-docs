@@ -7,27 +7,146 @@
 \section{Resultados Esperados}
 apresentar quais resultados esperamos alcançar com o desenvolvimento do projeto.
 
-% linguagem de Programação
-\subsection{Linguagem de Programação}
-\textbf{Java} (Oracle JDK 17) foi a linguagem de programação escolhida para o desenvolvimento do projeto.
-A escolha foi feita com base na experiência da equipe de desenvolvimento e na compatibilidade 
-com as bibliotecas necessárias para o projeto.
-% Ferramentas
-\subsection{Ferramentas de Desenvolvimento}
-    \subsubsection{Como ferramentas auxiliares ao desenvolvimento utilizamos :}
-    Para comunicação interna entre a equipe, o Whatsapp e o Discord.
-    \subsubsection{Para Organização das etapas do projeto, utilizamos:}
-    o Trello, o Google Docs, o World, o Excel, o Numbers, o Pages e o MS-Project.
-    \subsubsection{Para Diagramação, utilizamos: }
-    Draw.io.
-    \subsubsection{Para os ícones utilizamos:}
-     as bibliotecas de ícones Phosphor Icons, FlatIcon.
-    \subsubsection{Para edição da documentação oficial utilizamos:}
-     o LaTeX - LuaLaTex e o Overleaf e TexStudio.
-    \subsubsection{Para Designs e Protótipos utilizamos:}
-    o Canva e o GIMP.
 
+% Automoção de atividades 
+\subsection{Automação de atividades} A automação de atividades é essencial para a gestão eficiente de processos internos, pois reduz 
+o tempo gasto com tarefas manuais, diminui a ocorrência de erros humanos e aumenta a confiabilidade das informações. Automatizar atividades 
+repetitivas permite que a equipe se concentre em tarefas mais estratégicas, agregando mais valor ao negócio.
 
-% --- Document: End ---
+Segundo Gonçalves (2004), a automação de processos é uma ferramenta fundamental para assegurar a continuidade dos negócios e a 
+confiabilidade das informações, minimizando os riscos de falhas causadas por erro humano ou esquecimento. A ABNT (2003) também 
+destaca, através de suas normas de segurança da informação, a importância de manter a integridade e a precisão dos dados, princípios 
+que a automação reforça.
+
+    \subsubsection{Atividades repetitivas} 
+    Atividades que são realizadas frequentemente, como geração de relatórios, contratos e recibos simples, serão automatizadas. Com 
+    isso, garante-se uniformidade na emissão de documentos e ganho de eficiência operacional.
+
+    \subsubsection{Atualizações obrigatórias} 
+    O sistema controlará atualizações importantes, como mudanças de conta bancária, telefone e e-mail, além de reajustes de contratos. 
+    Todo o histórico será mantido, permitindo rastrear alterações e suas respectivas motivações, garantindo transparência e segurança 
+    nos registros.
+
+    \subsubsection{Geração de termos e anexos} 
+    A criação de termos contratuais e outros documentos poderá ser feita automaticamente, com poucos cliques. Além disso, será 
+    possível anexar documentos de apoio, assegurando organização e facilidade de acesso às informações.
+
+    \subsubsection{Evitar erros humanos} 
+    A automação proporciona maior precisão no controle e manipulação dos dados, evitando erros na geração de recibos, atualizações 
+    cadastrais, contratos, relatórios ou reajustes de valores. Isso contribui diretamente para a melhoria da qualidade das informações 
+    e para a credibilidade do sistema.
+
+    \subsubsection{Alertas e pendências} 
+    O sistema gerará alertas e pendências internos para os usuários, informando sobre vencimentos de contas, encerramento de contratos, 
+    necessidade de renovação de garantias e outros prazos importantes. Assim, evita-se o esquecimento de tarefas críticas e assegura-se 
+    que todas as obrigações sejam cumpridas em tempo hábil.
+
+    
+    % Disponibilidade
+\subsection{Disponibilidade}
+A disponibilidade de um software refere-se à sua capacidade de estar operacional e acessível sempre que necessário. 
+Segundo Bass, Clements e Kazman (2012), disponibilidade é definida como a habilidade de um sistema continuar operando 
+mesmo na presença de falhas. É um dos atributos de qualidade mais críticos, pois o sistema precisará estar disponível
+para os usuários a qualquer momento. Por se tratar de uma proposta de um servidor local, será implementada a medida 
+de redundância do tipo RAID 1.
+    \subsubsection{Rede interna e servidor local}
+    Nossa proposta para garantir a disponibilidade do sistema consiste em implementá-lo dentro de uma rede local (LAN), 
+    limitando o acesso apenas aos computadores conectados à mesma rede do servidor. Desta forma, o sistema não dependerá 
+    da conexão com a internet para funcionar, o que elimina problemas relacionados a instabilidades externas e riscos 
+    adicionais de segurança provenientes da exposição pública.
+    \subsubsection{Redundância}
+    Além disso, o servidor contará com um sistema de armazenamento redundante baseado em RAID (Redundant Array of Independent Disks), 
+    utilizando três discos rígidos de 500 GB cada. Segundo Patterson, Gibson e Katz (1988), o RAID é uma técnica que combina múltiplos 
+    discos físicos em uma única unidade lógica para melhorar a confiabilidade e o desempenho. No nosso caso, a utilização de RAID 
+    proporcionará tolerância a falhas: caso um dos discos apresente defeito, o sistema continuará operando normalmente, evitando a 
+    interrupção do serviço.
+
+    A importância do RAID para a disponibilidade é amplamente reconhecida na arquitetura de software. Como apontado por Chen \textit{et al.} (1994), 
+    técnicas de RAID são fundamentais para proteger dados contra falhas de hardware, reduzir tempos de recuperação e aumentar a 
+    confiança no armazenamento de dados críticos.
+
+\subsection{Backup}
+O backup é um procedimento fundamental para garantir a segurança da informação, possibilitando a recuperação de dados em caso de falhas, 
+perdas acidentais, ataques cibernéticos ou desastres físicos. Segundo Bass, Clements e Kazman (2012), manter cópias de segurança é uma 
+prática essencial para assegurar a continuidade dos serviços de software. A ausência de um sistema de backup eficiente pode acarretar 
+prejuízos irreparáveis para a organização, incluindo a perda de dados críticos e paralisação de operações.
+
+Conforme orienta a Associação Brasileira de Normas Técnicas (ABNT, 2003), a proteção dos dados deve ser parte integrante da estratégia 
+de manutenção da integridade da informação, sendo recomendada a adoção de múltiplas cópias armazenadas em diferentes locais.
+    \subsubsection{Metodologia do Backup}
+
+    A metodologia adotada prevê a realização de backups manuais diariamente, ao final do expediente. O processo será iniciado apenas 
+    após a confirmação de que não haverá mais alterações nos dados do sistema naquele dia. Tal abordagem visa garantir que todas as 
+    informações relevantes estejam devidamente atualizadas antes da criação das cópias de segurança.
+
+    Segundo Gonçalves (2004), backups diários aumentam significativamente a proteção contra perdas de dados recentes, minimizando 
+    riscos operacionais.
+
+    \subsubsection{Backup Local}
+
+    O backup local será realizado por meio da cópia completa do banco de dados para dispositivos físicos, especificamente um 
+    pendrive e um disco rígido externo (HD). Essa prática visa assegurar uma recuperação rápida em caso de falha do sistema principal, 
+    conforme orientações de Patterson, Gibson e Katz (1988), que destacam a importância de múltiplas camadas de proteção de dados para 
+    garantir alta disponibilidade e confiabilidade.
+
+    O armazenamento físico próximo ao local de operação permite respostas imediatas a eventuais incidentes, além de oferecer 
+    independência de conexões externas.
+
+    \subsubsection{Backup em Nuvem}
+
+    Além do backup local, cópias do banco de dados serão enviadas para dois serviços distintos de armazenamento em nuvem, o 
+    Google Drive e o OneDrive. Essa abordagem segue as boas práticas recomendadas por Chen et al. (1994), que destacam a 
+    importância da redundância geográfica para proteger dados contra desastres locais.
+
+    A utilização de múltiplos provedores em nuvem proporciona maior resiliência, pois em caso de falha ou indisponibilidade 
+    em um dos serviços, as cópias de segurança ainda estarão acessíveis no segundo serviço.
+
+    \subsubsection{Disponibilidade do Backup}
+
+    Os backups serão armazenados por um período contínuo de 30 dias. Isso significa que a cada dia será criado um novo 
+    backup, e o backup mais antigo, ao completar 30 dias, será excluído. Esse método, conhecido como retenção rotativa, 
+    mantém uma janela de restauração ampla, permitindo a recuperação de dados de qualquer dia do último mês.
+
+    De acordo com Bass, Clements e Kazman (2012), a definição de uma política clara de retenção de backups é fundamental 
+    para equilibrar a disponibilidade de dados históricos e a gestão eficiente de armazenamento.
+    
+    \subsubsection{Referências para salvar em outro arquivo}
+    Bass, L., Clements, P., \& Kazman, R. (2012). Software Architecture in Practice (3rd ed.). Addison-Wesley.
+
+    Patterson, D. A., Gibson, G., \& Katz, R. H. (1988). A Case for Redundant Arrays of Inexpensive Disks (RAID). Proceedings of the 1988 ACM SIGMOD International Conference on Management of Data.
+
+    Chen, P. M., Lee, E. K., Gibson, G. A., Katz, R. H., \& Patterson, D. A. (1994). RAID: High-Performance, Reliable Secondary Storage. ACM Computing Surveys (CSUR).
+    
+    ABNT, Associação Brasileira de Normas Técnicas. NBR ISO/IEC 17799: Código de prática para a gestão da segurança da informação. Rio de Janeiro: ABNT, 2003.
+
+    Gonçalves, Vicente de Paula. Gerenciamento da continuidade dos negócios: uma abordagem prática. Rio de Janeiro: Qualitymark, 2004.
+    
+    DATE, C. J. Introdução a sistemas de banco de dados. 8. ed. Rio de Janeiro: Campus, 2004.
+
+    HELMAN, P. NoSQL: Banco de Dados para Aplicações Web. São Paulo: Novatec, 2015.
+
+    TURNBULL, J. The Docker Book: Containerization is the New Virtualization. 1. ed. [S.l.]: James Turnbull, 2014.
+    FOWLER, M. Patterns of Enterprise Application Architecture. Boston: Addison-Wesley, 2002
+
+    TILKOV, S.; VOGELS, W. Node.js: Using JavaScript to Build High-Performance Network Programs. IEEE Internet Computing, v. 14, n. 6, p. 80-83, 2010.
+
+    GAMMA, E. et al. Design Patterns: Elements of Reusable Object-Oriented Software. Boston: Addison-Wesley, 1995.
+
+    FIELDING, R. T. Architectural Styles and the Design of Network-based Software Architectures. 2000. Tese (Doutorado em Ciência da Computação) – University of California, Irvine.
+
+    MICROSOFT. TypeScript Documentation. 2012. Disponível em: https://www.typescriptlang.org/. Acesso em: 28 abr. 2025.
+
+    HOLMES, A. Getting MEAN with Mongo, Express, Angular, and Node. Shelter Island: Manning Publications, 2016.
+
+    KARGER, A. Mongoose for Application Development. Birmingham: Packt Publishing, 2013.
+
+    TAILWIND LABS. Tailwind CSS Documentation. 2017. Disponível em: https://tailwindcss.com/docs. Acesso em: 28 abr. 2025.
+    
+    NPM. bcrypt. Disponível em: https://www.npmjs.com/package/bcrypt. Acesso em: 28 abr. 2025.
+
+    NPM. dotenv. Disponível em: https://www.npmjs.com/package/dotenv. Acesso em: 28 abr. 2025.
+
+    NPM. jsonwebtoken. Disponível em: https://www.npmjs.com/package/jsonwebtoken. Acesso em: 28 abr. 2025.
+    % --- Document: End ---
 \end{document}
 
